@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>1ME322, Uppgift 3 - Ett litet spel</title>
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/cookies.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>1ME322 Webbteknik 2</h1>
+		<h3>Uppgift 3 - Ett litet spel</h3>
+	</header>
+	<main>
+		<div id="userInfo">
+			<p>Total poäng: <span id="totPoints">0</span></p>
+			<p>Antal spel: <span id="countGames">0</span></p>
+		</div>
+		<p>Spelplanen består av 16 platser dit du ska dra brickor med siffror. Målet är att i så många rader och kolumner som möjligt få stigande serier, dvs för varje ruta ska siffran till höger eller under vara större. Totalt finns det 40 brickor med talen 1 till 40. Ur dessa får du fyra brickor i taget och ska dra dem till spelplanen.</p>
+		<p>Du får 1 poäng för varje rad eller kolumn som har en stigande serie. Du kan spela flera gånger och på så sätt samla ihop fler poäng.</p>
+		<p><button type="button" id="newGameBtn">Nytt spel</button></p>
+		<table id="board"> <!-- Spelplanen -->
+			<!-- I img-taggarna används klasserna s1, s2, etc. för att markera de brickor som ingår
+				 i en serie (rad eller kolumn). s1 - s4 är raderna och s5 - s8 är kolumnerna.
+				 Klasserna s1mark, s2mark, etc. markerar de element där det ska läggas en bock eller
+				 ett kryss, då serien kontrollerats i slutet av spelet. -->
+			<!-- Klassen empty används för en tom ruta. Då det läggs en bricka i rutan,
+				 ska klassen bytas till filled. -->
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="s1 s5 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s1 s6 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s1 s7 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s1 s8 empty"></td>
+				<td id="s1mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="s2 s5 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s2 s6 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s2 s7 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s2 s8 empty"></td>
+				<td id="s2mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="s3 s5 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s3 s6 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s3 s7 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s3 s8 empty"></td>
+				<td id="s3mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="s4 s5 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s4 s6 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s4 s7 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="s4 s8 empty"></td>
+				<td id="s4mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>  <!-- Bock | kryss för kolumner -->
+				<td id="s5mark" class="mark"></td>
+				<td id="s6mark" class="mark"></td>
+				<td id="s7mark" class="mark"></td>
+				<td id="s8mark" class="mark"></td>
+				<td></td>
+			</tr>
+		</table>
+		<div id="control">
+			<div id="newTiles"> <!-- Nya brickor som väljs slumpmässigt -->
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+			</div>
+			<button type="button" id="newTilesBtn">Nya brickor</button>
+			<!-- Följande element används för guldstjärneuppgiften.
+				 Ta bort kommentaren kring det, om du utför den uppgiften. -->
+			<!--<p>
+				Antal möjliga flytt i spelplanen som återstår: <span id="moveCount">0</span>
+			</p>-->
+		</div>
+		<div id="message"></div> <!-- Meddelande till användaren -->
+		<img src="img/ghost.png" alt="spöke" id="ghost"> <!-- Används i VG-uppgiften -->
+	</main>
+	<footer>
+		<p>Uppgift 3 i 1ME322 Webbteknik 2 på Linnéuniversitetet</p>
+	</footer>
+</body>
+</html>

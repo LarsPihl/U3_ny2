@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/* ----- Rutan med totalpoäng och antal spel ----- */
+#userInfo {
+	background-color: #FC6;
+	border: 3px solid #666;
+	float: right;
+	width: min-content;
+	white-space: nowrap;
+	text-align: right;
+	font-size: 1.5em;
+	padding: 0.1em 0.2em;
+	margin: 0.6em;
+}
+#userInfo p {
+	margin: 0;
+	padding: 0;
+}
+
+/* ----- Spelplanen ----- */
+#board {
+	float: left;
+}
+#board, #board td {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+#board img {
+	width: 60px;
+	height: 60px;
+}
+.mark {
+	font-size: 48px;
+}
+
+/* Plats för nya brickor och knapp för det */
+#control {
+	float: right;
+	text-align: center;
+}
+#newTiles, #newTilesBtn {
+	margin-bottom: 2em;
+}
+#newTiles img {
+	width: 60px;
+	height: 60px;
+}
+
+/* Plats för meddelanden under spelplanen */
+#message {
+	padding-top: 1.5em;
+	font-size: 1.5em;
+	clear: both;
+}
+
+/* Olika klasser för img-taggarna, beroende på hur brickan visas.
+   Förutom att byta bild i img-taggen, ska du också växla mellan dessa klasser. */
+.empty { /* Tom plats för bricka */
+	border: 2px solid #AAC;
+	background-color: transparent;
+}
+.filled { /* Bricka där siffran visas */
+	border: 2px solid #600;
+	background-color: #FFF;
+}
+
+/* ----- Stil för VG-uppgiften ----- */
+main {
+	position: relative;
+}
+#ghost {
+	position: absolute;
+	top: 120px;
+	left: 250px;
+	opacity: 0.8;
+	visibility: hidden;
+}
+.ghostTile { /* Stil för bricka som tas bort av spöket */
+	border: 2px solid #006;
+	background-color: #C99;
+}
+
+/* ----- Stil för guldstjärneuppgiften ----- */
+#moveCount {
+	font-size: 2em;
+}
